@@ -1,5 +1,5 @@
 {
-  "name": "telegram-codefresh",
+  "name": "telegram-notifier",
   "version": "1.0.0",
   "main": "index.js",
   "author": "andrii.shaforostov <andrii@codefresh.io>",
