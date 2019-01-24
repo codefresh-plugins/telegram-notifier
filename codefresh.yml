@@ -1,0 +1,14 @@
+version: '1.0'
+steps:
+  BuildingDockerImage:
+    title: Building Docker Image
+    type: build
+    dockerfile: Dockerfile
+    image_name: kodexxx/telegram-plugin
+  PushDockerHub:
+    title: 'Pushing to dockerhub'
+    type: 'push'
+    candidate: '${{BuildingDockerImage}}'
+    tag: 'latest'
+    registry: 'dockerhub'
+    image_name: 'potterua/telegram-codefresh'
