@@ -1,0 +1,11 @@
+version: '1.0'
+...
+steps:
+  ...
+  sendMessage:
+    image: codefreshplugins/telegramnotifier
+    environment:
+      - TELEGRAM_TOKEN=TOKEN
+      - TELEGRAM_TO=99999999
+      - TELEGRAM_MESSAGE=Hello {{{userLink}}}, how are you
+      - TELEGRAM_IMAGES=https://codefresh.io/docs/assets/brand/codefresh-social.png
