@@ -11,7 +11,7 @@ sources:
 maintainers:
   - name: Andrii Shaforostov
     email: andrii@codefresh.io
-icon: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Telegram_Messenger.png'
+icon: 'https://raw.githubusercontent.com/codefresh-plugins/telegram-notifier/master/icon.jpg'
 envs:
   - name: TELEGRAM_TOKEN
     type: required
