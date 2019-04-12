@@ -12,12 +12,39 @@ steps:
   sendMessage:
     image: codefresh/telegramnotifier
     environment:
-      - TELEGRAM_TOKEN=TOKEN
+      - TELEGRAM_TOKEN=${{TOKEN}}
       - TELEGRAM_TO=99999999
       - TELEGRAM_MESSAGE=Hello {{{userLink}}}, how are you
       - TELEGRAM_IMAGES=https://codefresh.io/docs/assets/brand/codefresh-social.png
 ```
+Before using the plugin, make sure **you have started the bot** you've created for the notifications
 
+An example of a more advanced notification message:
+```
+    #...
+    environment:
+      - "TELEGRAM_MESSAGE=buildTrigger: {{buildTrigger}}\nbuildInitiator: {{buildInitiator}}\nbuildId: {{buildId}}\nbuildTimestamp: {{buildTimestamp}}\nbuildUrl: {{buildUrl}}\nrepoOwner: {{repoOwner}}\nrepoName: {{repoName}}\nbranch: {{branch}}\nrevision: {{revision}}\ncommitAuthor: {{commitAuthor}}\ncommitUrl: {{commitUrl}}\ncommitMessage: {{commitMessage}}\nuserID: {{userID}}\nuserLink: {{{userLink}}}"
+
+    # or you could write it in a YAML literal block:
+    #...
+    environment:
+      - |-
+        TELEGRAM_MESSAGE=
+        buildTrigger: {{buildTrigger}}
+        buildInitiator: {{buildInitiator}}
+        buildId: {{buildId}}
+        buildTimestamp: {{buildTimestamp}}
+        buildUrl: {{buildUrl}}
+        repoOwner: {{repoOwner}}
+        repoName: {{repoName}}
+        branch: {{branch}}
+        revision: {{revision}}
+        commitAuthor: {{commitAuthor}}
+        commitUrl: {{commitUrl}}
+        commitMessage: {{commitMessage}}
+        userID: {{userID}}
+        userLink: {{{userLink}}}
+```
 ## Required variables
 
 - `TELEGRAM_TOKEN` - token of your bot (cat get from [@BotFather](https://t.me/BotFather))
