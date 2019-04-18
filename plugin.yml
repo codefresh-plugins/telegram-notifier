@@ -5,7 +5,7 @@ keywords:
   - telegram
   - notifications
 categories:
-  - Featured
+  - featured
 sources:
   - https://github.com/codefresh-contrib/telegram-notifier
 maintainers:
